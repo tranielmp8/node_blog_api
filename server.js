@@ -1,6 +1,7 @@
 require('dotenv').config()
 
 const express = require('express');
+const cors = require('cors')
 const mongoose = require('mongoose')
 const blogRoutes = require('./routes/blogs')
 
@@ -8,6 +9,7 @@ const blogRoutes = require('./routes/blogs')
 const app = express()
 
 // middleware
+app.use(cors());
 app.use(express.json()) // looks for this type of info and then attatches it
 
 app.use((req, res, next) => {
